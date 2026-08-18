@@ -1,0 +1,213 @@
+/* ============================================================
+   HOSA @ Ohio State — "Brand Board" scrapbook design system
+   Dusty blush + sage + cream + charcoal, script + bold serif
+   ============================================================ */
+:root{
+  --cream:#FAFAF6;
+  --blue:#A9C4DC;
+  --blue-soft:#E6EEF5;
+  --blue-deep:#5D84A6;
+  --brick:#D6948C;
+  --brick-soft:#F5E4E1;
+  --brick-deep:#B2564A;
+  --charcoal:#403E3E;
+  --ink:#2B2825;
+  --ink-soft:#7A716A;
+  --ink-faint:#A79E96;
+  --line:#E4DAD6;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Poppins', sans-serif;
+  font-weight:300;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Playfair Display', serif; font-weight:700; letter-spacing:-0.01em; color:var(--ink);}
+.script{font-family:'Caveat', cursive; font-weight:600;}
+a{color:var(--charcoal); text-decoration:none;}
+a:hover{text-decoration:underline; text-underline-offset:3px;}
+img{max-width:100%; display:block;}
+:focus-visible{outline:2px solid var(--blue-deep); outline-offset:2px;}
+
+/* ---------- Masthead: framed brand-board bar ---------- */
+.masthead{
+  margin:14px 14px 0; border:1.5px solid var(--blue-deep); border-radius:2px;
+  background:var(--blue-soft);
+  height:auto; padding:10px 24px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.masthead .pulse-line{display:block; flex:0 0 auto;}
+.masthead .pulse-line svg{width:70px; height:20px; display:block;}
+.masthead .status{display:flex; align-items:center; gap:8px;}
+.masthead .status .led{display:none;}
+.masthead .id{
+  font-family:'Caveat', cursive; font-size:18px; color:var(--charcoal); font-weight:600;
+}
+
+/* ---------- Nav ---------- */
+.site-nav{
+  max-width:1000px; margin:0 auto; padding:26px 32px 20px;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
+}
+.site-nav .brand{
+  font-family:'Playfair Display', serif; font-size:19px; font-weight:700; color:var(--ink);
+  display:flex; align-items:baseline; gap:6px;
+}
+.site-nav .brand .tag{display:none;}
+.nav-links{display:flex; gap:24px; flex-wrap:wrap;}
+.nav-links a{
+  color:var(--ink-soft); font-size:13.5px; font-weight:400; text-decoration:none;
+  letter-spacing:0.01em;
+}
+.nav-links a:hover, .nav-links a.active{color:var(--charcoal); font-weight:500; text-decoration:none;}
+
+.divider{max-width:1000px; margin:0 auto; padding:10px 32px;}
+.divider hr{border:none; height:8px; background-size:contain; background-repeat:no-repeat; background-position:center;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 8'%3E%3Cpath d='M0 4 Q 10 0, 20 4 T 40 4 T 60 4 T 80 4 T 100 4 T 120 4 T 140 4 T 160 4 T 180 4 T 200 4 T 220 4 T 240 4 T 260 4 T 280 4 T 300 4 T 320 4 T 340 4 T 360 4 T 380 4 T 400 4' stroke='%235D84A6' stroke-width='1.4' fill='none'/%3E%3C/svg%3E");
+}
+
+/* ---------- Page hero (interior pages) ---------- */
+.page-hero{max-width:1000px; margin:0 auto; padding:36px 32px 6px;}
+.eyebrow{
+  font-family:'Caveat', cursive;
+  font-size:20px; color:var(--blue-deep); margin-bottom:4px; font-weight:600;
+}
+.page-hero h1{font-size:clamp(32px,5vw,46px); line-height:1.08;}
+.page-hero p.lead{margin-top:14px; max-width:580px; color:var(--ink-soft); font-size:15.5px; font-weight:300;}
+
+main{max-width:1000px; margin:0 auto; padding:30px 32px 100px;}
+
+/* ---------- Content sections: alternating soft collage cards ---------- */
+.chart-row{
+  padding:30px 32px;
+  margin-bottom:20px;
+  border-radius:4px;
+  background:var(--blue-soft);
+}
+.chart-row:nth-of-type(3n+2){background:var(--brick-soft);}
+.chart-row:nth-of-type(3n+3){background:var(--cream); border:1px solid var(--line);}
+.chart-label{
+  font-family:'Caveat', cursive;
+  font-size:19px; color:var(--charcoal); font-weight:600; margin-bottom:10px; display:block;
+}
+.chart-row h2{font-size:22px; margin-bottom:12px; font-weight:700;}
+.chart-row h3{font-size:15.5px; margin:16px 0 8px; font-weight:600; font-family:'Poppins', sans-serif; color:var(--ink);}
+
+.links-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:6px 24px;}
+.links-grid a{
+  font-size:14.5px; color:var(--ink); border-bottom:1px solid rgba(64,62,62,0.15);
+  padding:10px 0; display:block; font-weight:400;
+}
+.links-grid a:hover{color:var(--charcoal); font-weight:500; text-decoration:none;}
+
+.callout{
+  background:var(--cream); border:1px solid var(--blue-deep);
+  padding:16px 20px; font-size:14.5px; color:var(--ink-soft); margin-bottom:16px; border-radius:4px;
+}
+.callout.accent{border-color:var(--brick-deep);}
+.callout a{color:var(--charcoal); font-weight:500;}
+.callout strong{color:var(--ink);}
+
+.meeting-card{
+  border:1px solid var(--line); background:var(--cream); padding:20px; margin-bottom:16px; border-radius:4px;
+}
+.meeting-card strong{color:var(--ink); font-family:'Playfair Display', serif; font-size:15px;}
+.meeting-card ul{list-style:none; margin-top:10px; font-size:14.5px; color:var(--ink-soft);}
+.meeting-card li{padding:3px 0;}
+
+.event-table{width:100%; border-collapse:collapse; font-size:14px;}
+.event-table th{
+  text-align:left; font-family:'Caveat', cursive;
+  font-size:16px; color:var(--charcoal); font-weight:600; padding-bottom:8px; border-bottom:1.5px solid var(--blue-deep);
+}
+.event-table td{padding:14px 12px 14px 0; border-bottom:1px solid var(--line); color:var(--ink-soft); vertical-align:top;}
+.event-table td:first-child{color:var(--ink); font-weight:500;}
+.tag{
+  display:inline-block; font-size:11px;
+  padding:4px 11px; background:var(--brick); color:var(--charcoal); border-radius:12px; letter-spacing:0.02em; font-weight:500;
+}
+
+.project-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+.project-card{
+  padding:22px; border-radius:4px; background:var(--brick-soft);
+}
+.project-card:nth-of-type(2n){background:var(--blue-soft);}
+.project-card .icon{font-size:22px; margin-bottom:10px; display:block;}
+.project-card h3{font-size:16px; margin-bottom:6px; font-weight:600; font-family:'Playfair Display', serif;}
+.project-card p{font-size:14px; color:var(--ink-soft);}
+.project-card .tag{margin-top:12px;}
+
+.btn{
+  display:inline-block; padding:13px 28px; border-radius:22px;
+  font-size:13px; font-weight:500; letter-spacing:0.02em;
+}
+.btn-primary{background:var(--charcoal); color:var(--cream);}
+.btn-primary:hover{background:var(--ink); text-decoration:none;}
+.btn-ghost{border:1px solid var(--charcoal); color:var(--charcoal);}
+.btn-ghost:hover{background:var(--charcoal); color:var(--cream); text-decoration:none;}
+.cta-row{margin-top:10px; display:flex; gap:12px; flex-wrap:wrap;}
+
+.faq details{border-bottom:1px solid var(--line); padding:16px 0;}
+.faq summary{cursor:pointer; font-weight:500; color:var(--ink); font-size:15px; list-style:none; font-family:'Playfair Display', serif;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::before{content:"✦ "; color:var(--blue-deep); font-size:12px;}
+.faq p, .faq ul{margin-top:10px; font-size:14.5px; color:var(--ink-soft); font-family:'Poppins', sans-serif; font-weight:300;}
+.faq ul{padding-left:18px;}
+
+.numbered{list-style:none; counter-reset:step;}
+.numbered li{counter-increment:step; position:relative; padding:9px 0 9px 36px; font-size:15px;}
+.numbered li::before{
+  content:counter(step); position:absolute; left:0; top:7px;
+  width:22px; height:22px; background:var(--blue); color:var(--charcoal);
+  font-family:'Caveat', cursive; font-size:15px; font-weight:600;
+  display:flex; align-items:center; justify-content:center; border-radius:50%;
+}
+
+.input-panel{
+  border:1.5px dashed var(--blue-deep); background:var(--cream);
+  padding:34px; text-align:center; color:var(--ink-soft); font-size:14.5px; border-radius:4px;
+}
+.input-panel h3{color:var(--ink); margin-bottom:8px; font-size:16px; font-family:'Playfair Display', serif;}
+
+.subgrid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+
+/* ---------- Swatch band (was vitals-band) — palette-style info panel ---------- */
+.vitals-band{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
+}
+.vitals-band .cell{
+  text-align:center; padding:18px 10px; background:var(--cream); border:1px solid var(--line); border-radius:50%/18%;
+}
+.vitals-band .cell .k{
+  font-family:'Caveat', cursive; font-size:15px; color:var(--blue-deep); margin-bottom:6px; font-weight:600;
+}
+.vitals-band .cell .v{font-size:13px; font-weight:500; color:var(--ink); font-family:'Poppins', sans-serif;}
+
+footer.site-footer{
+  max-width:1000px; margin:0 auto; padding:24px 32px 64px;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:13px; color:var(--ink-faint); flex-wrap:wrap; gap:10px;
+}
+footer.site-footer a{color:var(--ink-soft); font-family:'Caveat', cursive; font-size:16px;}
+
+/* ---------- Filmstrip (decorative photo strip) ---------- */
+.filmstrip{display:flex; gap:6px; max-width:1000px; margin:0 auto; padding:0 32px 30px; overflow-x:auto;}
+.filmstrip .frame{
+  flex:0 0 90px; height:64px; border-radius:2px; background:var(--brick-soft);
+  display:flex; align-items:center; justify-content:center;
+}
+.filmstrip .frame:nth-child(3n+2){background:var(--blue-soft);}
+.filmstrip .frame:nth-child(3n+3){background:var(--charcoal);}
+
+@media(max-width:640px){
+  .links-grid{grid-template-columns:1fr;}
+  .project-grid{grid-template-columns:1fr;}
+  .subgrid{grid-template-columns:1fr;}
+  .vitals-band{grid-template-columns:1fr 1fr;}
+  footer.site-footer{flex-direction:column; text-align:center;}
+  .nav-links{gap:16px;}
+}
